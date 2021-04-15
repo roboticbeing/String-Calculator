@@ -4,8 +4,8 @@ using System.Text;
 
 //Write tests
 
-//c.The return type should be an integer.
-//d.Example input: “1,2,5” -expected result: “8”.
+
+
 //e.Write tests to prove your input validates.
 
 
@@ -18,12 +18,19 @@ namespace String_Calculator
         {
             //a.The numbers in the string are separated by a comma.
             string[] nums = numbers.Split(',');
+            int sum = 0;
 
             //b.Empty strings should return 0.
             if (string.IsNullOrEmpty(numbers))
                 return 0;
 
-            return Int32.Parse(numbers);
+            foreach (var num in nums)
+            {
+                sum += Int32.Parse(num);
+            }
+
+            //c.The return type is an integer.
+            return sum;
         }
     }
 }
