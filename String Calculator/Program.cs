@@ -1,6 +1,7 @@
 ﻿using System;
+using String_Calculator;
 
-namespace String_Calculator
+namespace Program
 {
     class Program
     {
