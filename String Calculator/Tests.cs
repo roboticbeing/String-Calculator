@@ -4,22 +4,31 @@ using System.Text;
 
 namespace String_Calculator
 {
-    //Write tests to prove your input validates.
+      //Write tests to prove your input validates.
     class Tests : StringCalculator
     {
-        public bool CommaSplitTest()
+        public bool CommaSplitTest(string input)
         {
-            int expected_result = 8;
-
-            if (Add("1,2,5") != expected_result)
+            int expected_result = 0;
+            switch(input)
             {
-                Console.WriteLine("Test failed " + Add("1,2,5") + " did not match the expected result.");
+                case "1,2,5":
+                    expected_result = 8;
+                    break;
+                case "2,2,2":
+                    expected_result = 6;
+                    break;
+            }
+
+            if (Add(input) != expected_result)
+            {
+                Console.WriteLine("Comma Split Test failed: " + Add(input) + " did not match " + expected_result);
                 return false;
             }
 
             else
             {
-                Console.WriteLine("Test passed: " + Add("1,2,5"));
+                Console.WriteLine("Comma Split Test passed: " + Add(input));
                 return true;
             }
         }
