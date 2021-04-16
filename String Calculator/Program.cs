@@ -13,9 +13,8 @@ namespace Program
             test.CommaSplitTest("1,2,5");
             //Example input: “2,2,2” -expected result: “6”.
             test.CommaSplitTest("2,2,2");
-
             ////Example input: “” -expected result: “0”.
-            // Console.WriteLine(sc.Add(""));
+            test.EmptyStringTest("");
 
             ////a. Example: “1\n,2,3” -Result: “6”
             //Console.WriteLine(sc.Add("1\n,2,3"));
