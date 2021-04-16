@@ -27,6 +27,10 @@ namespace Program
             test.CustomDelimeterTest("//@\n2@3@8");
             //input: "//,-1,-2,3,4" - Exception thrown
             test.NegativeNumberTest("//,-1,-2,3,4");
+            //input: "2,1001" - Result: 2
+            test.IgnoreNumbersGreaterThan1000Test("2,1001");
+            //input: "1,2,4000,20" - Result 23
+            test.IgnoreNumbersGreaterThan1000Test("1,2,4000,20");
         }
     }
 }

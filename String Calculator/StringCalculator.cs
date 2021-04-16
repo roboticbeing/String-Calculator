@@ -44,6 +44,7 @@ namespace String_Calculator
                     //Ignore the first split '//' and sum up the rest if they are positive numbers
                     if (!(num == "//") && Int32.Parse(num) > 0)
                     {
+                        if(Int32.Parse(num) < 1000)
                         sum += Int32.Parse(num);
                     }
 

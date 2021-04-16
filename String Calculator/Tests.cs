@@ -7,8 +7,35 @@ namespace String_Calculator
       //Write tests to prove your input validates.
     class Tests : StringCalculator
     {
+
+        public bool IgnoreNumbersGreaterThan1000Test(string input)
+        {
+            int expected_result = 0;
+            switch (input)
+            {
+                case "2,1001":
+                    expected_result = 2;
+                    break;
+                case "1,2,4000,20":
+                    expected_result = 23;
+                    break;
+            }
+
+            if (Add(input) != expected_result)
+            {
+                Console.WriteLine("Ignore Numbers Greater Than 1000 Test failed: " + Add(input) + " did not match " + expected_result);
+                return false;
+            }
+
+            else
+            {
+                Console.WriteLine("Ignore Numbers Greater Than 1000 Test passed: " + Add(input));
+                return true;
+            }
+        }
         public bool NegativeNumberTest(string input)
         {
+            //error handling in Add method, no need for expected results
             Add(input);
             return false;
         }
