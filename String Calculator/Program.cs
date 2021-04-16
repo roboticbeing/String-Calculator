@@ -22,7 +22,7 @@ namespace Program
             //input: “//;\n1;3;4” - Result: 8
             test.CustomDelimeterTest("//;\n1;3;4");
             //input: “//$\n1$2$3” - Result: 6
-            test.CustomDelimeterTest("//$\n1$2$3");
+            test.CustomDelimeterTest("//$\n1$$2$3");
             //input: “//@\n2@3@8” - Result: 13
             test.CustomDelimeterTest("//@\n2@3@8");
             //input: "//,-1,-2,3,4" - Exception thrown
@@ -31,6 +31,8 @@ namespace Program
             test.IgnoreNumbersGreaterThan1000Test("2,1001");
             //input: "1,2,4000,20" - Result 23
             test.IgnoreNumbersGreaterThan1000Test("1,2,4000,20");
+            test.ArbitraryLengthDelimeterTest("//***\n1***2***3");
+            test.ArbitraryLengthDelimeterTest("//$5$$5$$$5");
         }
     }
 }
