@@ -7,6 +7,12 @@ namespace String_Calculator
       //Write tests to prove your input validates.
     class Tests : StringCalculator
     {
+        public bool NegativeNumberTest(string input)
+        {
+            Add(input);
+            return false;
+        }
+
         public bool CustomDelimeterTest(string input)
         {
             int expected_result = 0;

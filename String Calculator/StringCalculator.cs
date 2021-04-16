@@ -41,17 +41,20 @@ namespace String_Calculator
                     if (string.IsNullOrEmpty(numbers))
                         break;
 
+                    //Ignore the first split '//' and sum up the rest if they are positive numbers
                     if (!(num == "//") && Int32.Parse(num) > 0)
                     {
                         sum += Int32.Parse(num);
                     }
 
+                    //Add negative numbers to a list
                     if (!(num == "//") && Int32.Parse(num) < 0)
                     {
                         negative_nums.Add(num);
                     }
                 }
 
+                //if there are any negative numbers, throw an exception
                 if (negative_nums.Count > 0)
                 {
                     throw new Exception();
